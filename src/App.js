@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import {getCars} from "./services/apiCars";
-import CarsList from "./components/CarsList/CarsList";
-import FormFilter from "./components/FormFilters/FormFilters";
-import { Routes, Route } from "react-router-dom";
+import React, { lazy } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import css from './App.module.css'
+
+const Home = lazy(() => import("./components/Pages/Home"));
+const Cars = lazy(() => import("./components/Pages/Cars"));
 
 export default function App() {
-  const [cars, setCars] = useState(null);
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const carsList = await getCars();
-      setCars(carsList)
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <div>
+      <header>
+        <nav className={css.navigation}>
+          <Link to="/" className={css.link}>
+            Home
+          </Link>
+          <Link to="/cars" className={css.link}>
+            Cars
+          </Link>
+          <Link to="/favorite" className={css.link}>
+            Favorite
+          </Link>
+        </nav>
+      </header>
       <Routes>
-        
+        <Route path="/" element={<Home />} />
+        <Route path="cars" element={<Cars />} />
       </Routes>
-      <FormFilter/>
-      {cars ? <CarsList cars={cars}/> : <p>Loading...</p>}
     </div>
   );
 }
-
