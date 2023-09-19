@@ -10,6 +10,7 @@ const CarsList = ({cars}) => {
                     src={car.img}
                     alt={car.model}
                     />
+                    <button>leran more</button>
                 </li>
             ))}
         </ul>
