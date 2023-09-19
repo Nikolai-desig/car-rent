@@ -1,0 +1,24 @@
+.forms {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.select__field {
+    padding: 14px, 160px, 14px, 18px;
+}
+
+.button__form {
+    color: white;
+    background-color: #3470FF;
+    border-radius: 10px;
+    border: none;
+    padding: 14px 44px;
+    cursor: pointer;
+}
+.button__form:hover {
+    background-color: #0B44CD;
+}
+
+.from__to{
+    display: flex;
+}

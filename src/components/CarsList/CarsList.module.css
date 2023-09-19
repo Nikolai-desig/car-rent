@@ -1,0 +1,16 @@
+.cars__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.car__box {
+   width: 274px; 
+}
+
+.car__img {
+    width: 100%;
+    height: 268px;
+    object-fit: cover;
+    border-radius: 10px;
+}
